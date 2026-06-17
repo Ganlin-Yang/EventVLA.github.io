@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EventVLA | Project Page</title>
+  <meta name="description" content="EventVLA: Event-Driven Visual Evidence Memory for Long-Horizon Vision-Language-Action Policies.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#top">EventVLA</a>
+      <button class="menu-toggle" aria-label="Toggle menu" id="menuToggle">Menu</button>
+      <nav class="site-nav" id="siteNav">
+        <a href="#abstract">Abstract</a>
+        <a href="#overview">Overview</a>
+        <a href="#method">Method</a>
+        <a href="#resources">Resources</a>
+        <a href="#setup">Setup</a>
+        <a href="#evaluation">Evaluation</a>
+        <a href="#citation">Citation</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">Long-Horizon VLA for Robotics</p>
+        <h1>EventVLA</h1>
+        <h2>Event-Driven Visual Evidence Memory for Long-Horizon Vision-Language-Action Policies</h2>
+        <p class="hero-text">
+          EventVLA introduces event-driven visual evidence memory: the policy detects task-relevant events,
+          stores key visual evidence as raw keyframe images, and reuses this memory while predicting actions.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://github.com/ganlinyang/EventVLA" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn" href="https://huggingface.co/ganlinyang/EventVLA/tree/main" target="_blank" rel="noreferrer">Checkpoints</a>
+          <a class="btn" href="https://huggingface.co/datasets/ganlinyang/RoboTwin-MeM" target="_blank" rel="noreferrer">Dataset</a>
+          <a class="btn btn-muted" href="#citation">Paper Coming Soon</a>
+        </div>
+
+        <ul class="stats">
+          <li><strong>8</strong><span>Memory-Dependent Tasks</span></li>
+          <li><strong>2</strong><span>Released Checkpoint Tracks</span></li>
+          <li><strong>MIT</strong><span>Repository License</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="abstract">
+      <div class="container narrow">
+        <h3>Abstract</h3>
+        <p>
+          Long-horizon robotic tasks often require recalling visually grounded evidence that appeared many steps earlier.
+          EventVLA tackles this by coupling a vision-language-action policy with an event-driven keyframe memory mechanism.
+          Instead of relying only on compressed latent state, it stores task-relevant visual evidence as raw keyframe images
+          and retrieves them during action generation. This repository is released together with <strong>RoboTwin-MeM</strong>,
+          a memory-dependent benchmark built on RoboTwin 2.0.
+        </p>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="overview">
+      <div class="container">
+        <h3>Overview</h3>
+        <p class="section-intro">
+          EventVLA and RoboTwin-MeM: model design and benchmark composition from the official repository.
+        </p>
+        <div class="figure-grid">
+          <figure class="figure-card">
+            <img src="assets/Overview.png" alt="EventVLA Overview">
+            <figcaption>EventVLA framework with event-driven visual evidence memory.</figcaption>
+          </figure>
+          <figure class="figure-card">
+            <img src="assets/RoboTwin-MeM.png" alt="RoboTwin-MeM Benchmark">
+            <figcaption>RoboTwin-MeM benchmark setup and memory-dependent task design.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="method">
+      <div class="container">
+        <h3>Method</h3>
+        <div class="cards">
+          <article class="card">
+            <h4>Event-Driven Memory Triggering</h4>
+            <p>Detect task-relevant events and select informative keyframes instead of storing every frame.</p>
+          </article>
+          <article class="card">
+            <h4>Raw Visual Evidence Storage</h4>
+            <p>Preserve high-fidelity visual clues by directly caching keyframe images as reusable evidence.</p>
+          </article>
+          <article class="card">
+            <h4>Memory-Aware Action Prediction</h4>
+            <p>Reuse selected keyframes at inference time to support long-horizon, multi-stage manipulation.</p>
+          </article>
+          <article class="card">
+            <h4>Benchmark Coupling</h4>
+            <p>Evaluate memory dependence on eight challenging RoboTwin-MeM tasks with standardized scripts.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="resources">
+      <div class="container">
+        <h3>Released Resources</h3>
+        <div class="two-col">
+          <div class="panel">
+            <h4>Model Checkpoints</h4>
+            <p>Hugging Face repository: <a href="https://huggingface.co/ganlinyang/EventVLA/tree/main" target="_blank" rel="noreferrer">ganlinyang/EventVLA</a></p>
+            <ul>
+              <li><strong>RoboTwin-MeM:</strong> evaluation on 8 RoboTwin-MeM tasks</li>
+              <li><strong>RMBench:</strong> evaluation on RMBench benchmark</li>
+              <li>Typical files: <code>final_model/pytorch_model.pt</code>, <code>config.yaml</code>, <code>dataset_statistics.json</code></li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h4>RoboTwin-MeM Dataset</h4>
+            <p>Dataset repository: <a href="https://huggingface.co/datasets/ganlinyang/RoboTwin-MeM" target="_blank" rel="noreferrer">ganlinyang/RoboTwin-MeM</a></p>
+            <ul>
+              <li>Contains both <code>hdf5/</code> trajectories and <code>lerobot_2.1/</code> format</li>
+              <li>Includes 8 tasks such as <code>cover_blocks_hard</code> and <code>reproduce_route</code></li>
+              <li>Designed for memory-dependent long-horizon manipulation evaluation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="setup">
+      <div class="container">
+        <h3>Installation & Setup</h3>
+        <div class="two-col">
+          <div class="panel">
+            <h4>RoboTwin-MeM Environment</h4>
+            <pre><code>conda create -n RoboTwin-MeM python=3.10 -y
+conda activate RoboTwin-MeM
+cd /path/to/RoboTwin-MeM
+pip install -r script/requirements.txt
+bash script/_install.sh
+bash script/_download_assets.sh</code></pre>
+          </div>
+          <div class="panel">
+            <h4>EventVLA Environment</h4>
+            <pre><code>conda create -n eventvla python=3.10 -y
+conda activate eventvla
+cd /path/to/EventVLA
+pip install -r requirements.txt
+pip install flash-attn --no-build-isolation
+pip install -e .</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="evaluation">
+      <div class="container">
+        <h3>Evaluation</h3>
+        <div class="two-col">
+          <div class="panel">
+            <h4>Single-Task Evaluation</h4>
+            <pre><code>bash examples/RoboTwin-Mem/eval_files/run_policy_server.sh \
+  /path/to/checkpoint.pt 0 5840
+
+bash examples/RoboTwin-Mem/eval_files/eval.sh \
+  cover_blocks_hard demo_clean pure_image_keyframe_memory 0 0</code></pre>
+          </div>
+          <div class="panel">
+            <h4>Batch Evaluation</h4>
+            <pre><code>bash examples/RoboTwin-Mem/eval_batch/run_batch_eval.sh \
+  examples/RoboTwin-Mem/eval_batch/weights_8tasks_pure_image_keyframe_memory_teacher_qwenoft.sh</code></pre>
+            <p class="small-note">Outputs include task-wise logs and a batch summary CSV.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="citation">
+      <div class="container narrow">
+        <h3>Citation</h3>
+        <p>EventVLA citation will be added after paper release.</p>
+        <pre><code>@misc{eventvla2026,
+  title  = {EventVLA: Event-Driven Visual Evidence Memory for Long-Horizon Vision-Language-Action Policies},
+  note   = {Project page based on the public EventVLA repository},
+  year   = {2026}
+}</code></pre>
+        <p>
+          Built on top of:
+          <a href="https://github.com/robotwin-Platform/RoboTwin" target="_blank" rel="noreferrer">RoboTwin 2.0</a>,
+          <a href="https://github.com/robotwin-Platform/RMBench" target="_blank" rel="noreferrer">RMBench</a>,
+          <a href="https://github.com/starVLA/starVLA" target="_blank" rel="noreferrer">StarVLA</a>.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <p>© <span id="year"></span> EventVLA Project.</p>
+      <p>
+        Page style inspired by
+        <a href="https://serene-sivy.github.io/aha-wam/" target="_blank" rel="noreferrer">AHA-WAM</a>
+        and
+        <a href="https://nerfies.github.io/" target="_blank" rel="noreferrer">Nerfies</a>.
+      </p>
+    </div>
+  </footer>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>
