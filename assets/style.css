@@ -289,6 +289,79 @@ code {
   font-size: 0.9rem;
 }
 
+.task-block {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1rem 1.1rem;
+}
+
+.task-block + .task-block {
+  margin-top: 1rem;
+}
+
+.task-block h4 {
+  margin: 0 0 0.45rem;
+  font-size: 1.02rem;
+}
+
+.task-instruction {
+  margin: 0 0 0.8rem;
+  color: var(--text-light);
+}
+
+.task-video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.task-video-row {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.task-video-grid video {
+  width: 100%;
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #000;
+}
+
+.benchmark-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.benchmark-video-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.55rem;
+}
+
+.benchmark-label {
+  margin-bottom: 0.5rem;
+  border: 1px solid #d1d5db;
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 0.35rem 0.45rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.25;
+}
+
+.benchmark-video-card video {
+  width: 100%;
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #000;
+}
+
 .site-footer {
   border-top: 1px solid var(--line);
   background: #fff;
@@ -311,6 +384,14 @@ code {
 
   .cards,
   .two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .benchmark-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .task-video-grid {
     grid-template-columns: 1fr;
   }
 }

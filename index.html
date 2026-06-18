@@ -18,10 +18,8 @@
       <nav class="site-nav" id="siteNav">
         <a href="#abstract">Abstract</a>
         <a href="#overview">Overview</a>
-        <a href="#method">Method</a>
-        <a href="#resources">Resources</a>
-        <a href="#setup">Setup</a>
-        <a href="#evaluation">Evaluation</a>
+        <a href="#benchmark">RoboTwin-MeM benchmark</a>
+        <a href="#tasks">Task Videos</a>
         <a href="#citation">Citation</a>
       </nav>
     </div>
@@ -39,17 +37,12 @@
         </p>
 
         <div class="hero-actions">
-          <a class="btn btn-primary" href="https://github.com/ganlinyang/EventVLA" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn btn-primary" href="https://github.com/InternRobotics/EventVLA" target="_blank" rel="noreferrer">GitHub</a>
           <a class="btn" href="https://huggingface.co/ganlinyang/EventVLA/tree/main" target="_blank" rel="noreferrer">Checkpoints</a>
           <a class="btn" href="https://huggingface.co/datasets/ganlinyang/RoboTwin-MeM" target="_blank" rel="noreferrer">Dataset</a>
           <a class="btn btn-muted" href="#citation">Paper Coming Soon</a>
         </div>
 
-        <ul class="stats">
-          <li><strong>8</strong><span>Memory-Dependent Tasks</span></li>
-          <li><strong>2</strong><span>Released Checkpoint Tracks</span></li>
-          <li><strong>MIT</strong><span>Repository License</span></li>
-        </ul>
       </div>
     </section>
 
@@ -77,109 +70,102 @@
             <img src="assets/Overview.png" alt="EventVLA Overview">
             <figcaption>EventVLA framework with event-driven visual evidence memory.</figcaption>
           </figure>
-          <figure class="figure-card">
-            <img src="assets/RoboTwin-MeM.png" alt="RoboTwin-MeM Benchmark">
-            <figcaption>RoboTwin-MeM benchmark setup and memory-dependent task design.</figcaption>
-          </figure>
         </div>
       </div>
     </section>
 
-    <section class="section" id="method">
+    <section class="section section-soft" id="benchmark">
       <div class="container">
-        <h3>Method</h3>
-        <div class="cards">
-          <article class="card">
-            <h4>Event-Driven Memory Triggering</h4>
-            <p>Detect task-relevant events and select informative keyframes instead of storing every frame.</p>
+        <h3>RoboTwin-MeM benchmark</h3>
+        <div class="benchmark-grid">
+          <article class="benchmark-video-card">
+            <div class="benchmark-label">Pick the Unhidden Block</div>
+            <video controls preload="metadata" src="assets/video5/Pick the Unhidden Block.mp4" onerror="this.parentElement.style.display='none'"></video>
           </article>
-          <article class="card">
-            <h4>Raw Visual Evidence Storage</h4>
-            <p>Preserve high-fidelity visual clues by directly caching keyframe images as reusable evidence.</p>
+          <article class="benchmark-video-card">
+            <div class="benchmark-label">Pick Objects in Order</div>
+            <video controls preload="metadata" src="assets/video5/Pick Objects in Order.mp4" onerror="this.parentElement.style.display='none'"></video>
           </article>
-          <article class="card">
-            <h4>Memory-Aware Action Prediction</h4>
-            <p>Reuse selected keyframes at inference time to support long-horizon, multi-stage manipulation.</p>
+          <article class="benchmark-video-card">
+            <div class="benchmark-label">Rearrange Blocks Hard</div>
+            <video controls preload="metadata" src="assets/video5/Rearrange Blocks Hard.mp4" onerror="this.parentElement.style.display='none'"></video>
           </article>
-          <article class="card">
-            <h4>Benchmark Coupling</h4>
-            <p>Evaluate memory dependence on eight challenging RoboTwin-MeM tasks with standardized scripts.</p>
+          <article class="benchmark-video-card">
+            <div class="benchmark-label">Reproduce Route</div>
+            <video controls preload="metadata" src="assets/video5/Reproduce Route.mp4" onerror="this.parentElement.style.display='none'"></video>
+          </article>
+          <article class="benchmark-video-card">
+            <div class="benchmark-label">Put Back Block Hard</div>
+            <video controls preload="metadata" src="assets/video5/Put Back Block Hard.mp4" onerror="this.parentElement.style.display='none'"></video>
+          </article>
+          <article class="benchmark-video-card">
+            <div class="benchmark-label">Cover Blocks Hard</div>
+            <video controls preload="metadata" src="assets/video5/Cover Blocks Hard.mp4" onerror="this.parentElement.style.display='none'"></video>
+          </article>
+          <article class="benchmark-video-card">
+            <div class="benchmark-label">Find Seal And Seal Stamp</div>
+            <video controls preload="metadata" src="assets/video5/Find Seal and Seal Stamp.mp4" onerror="this.parentElement.style.display='none'"></video>
+          </article>
+          <article class="benchmark-video-card">
+            <div class="benchmark-label">Press Button Keyframe</div>
+            <video controls preload="metadata" src="assets/video5/Press Button Keyframe.mp4" onerror="this.parentElement.style.display='none'"></video>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section section-soft" id="resources">
+    <section class="section" id="tasks">
       <div class="container">
-        <h3>Released Resources</h3>
-        <div class="two-col">
-          <div class="panel">
-            <h4>Model Checkpoints</h4>
-            <p>Hugging Face repository: <a href="https://huggingface.co/ganlinyang/EventVLA/tree/main" target="_blank" rel="noreferrer">ganlinyang/EventVLA</a></p>
-            <ul>
-              <li><strong>RoboTwin-MeM:</strong> evaluation on 8 RoboTwin-MeM tasks</li>
-              <li><strong>RMBench:</strong> evaluation on RMBench benchmark</li>
-              <li>Typical files: <code>final_model/pytorch_model.pt</code>, <code>config.yaml</code>, <code>dataset_statistics.json</code></li>
-            </ul>
-          </div>
-          <div class="panel">
-            <h4>RoboTwin-MeM Dataset</h4>
-            <p>Dataset repository: <a href="https://huggingface.co/datasets/ganlinyang/RoboTwin-MeM" target="_blank" rel="noreferrer">ganlinyang/RoboTwin-MeM</a></p>
-            <ul>
-              <li>Contains both <code>hdf5/</code> trajectories and <code>lerobot_2.1/</code> format</li>
-              <li>Includes 8 tasks such as <code>cover_blocks_hard</code> and <code>reproduce_route</code></li>
-              <li>Designed for memory-dependent long-horizon manipulation evaluation</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+        <h3>Task Videos</h3>
 
-    <section class="section" id="setup">
-      <div class="container">
-        <h3>Installation & Setup</h3>
-        <div class="two-col">
-          <div class="panel">
-            <h4>RoboTwin-MeM Environment</h4>
-            <pre><code>conda create -n RoboTwin-MeM python=3.10 -y
-conda activate RoboTwin-MeM
-cd /path/to/RoboTwin-MeM
-pip install -r script/requirements.txt
-bash script/_install.sh
-bash script/_download_assets.sh</code></pre>
+        <article class="task-block">
+          <h4>Task 1</h4>
+          <p class="task-instruction">
+            <strong>Task instruction:</strong> Cover the block with the nearest cup, then lift the cup covering the block and pick up the block.
+          </p>
+          <div class="task-video-grid task-video-row">
+            <video controls preload="metadata" src="assets/video1/1.mp4" onerror="this.style.display='none'"></video>
+            <video controls preload="metadata" src="assets/video1/2.mp4" onerror="this.style.display='none'"></video>
+            <video controls preload="metadata" src="assets/video1/3.mp4" onerror="this.style.display='none'"></video>
           </div>
-          <div class="panel">
-            <h4>EventVLA Environment</h4>
-            <pre><code>conda create -n eventvla python=3.10 -y
-conda activate eventvla
-cd /path/to/EventVLA
-pip install -r requirements.txt
-pip install flash-attn --no-build-isolation
-pip install -e .</code></pre>
-          </div>
-        </div>
-      </div>
-    </section>
+        </article>
 
-    <section class="section section-soft" id="evaluation">
-      <div class="container">
-        <h3>Evaluation</h3>
-        <div class="two-col">
-          <div class="panel">
-            <h4>Single-Task Evaluation</h4>
-            <pre><code>bash examples/RoboTwin-Mem/eval_files/run_policy_server.sh \
-  /path/to/checkpoint.pt 0 5840
+        <article class="task-block">
+          <h4>Task 2</h4>
+          <p class="task-instruction">
+            <strong>Task instruction:</strong> Lift the cups from left to right, open the cup containing the block and pick the block up. Pick up and put down the block the number of times as shown on the paper.
+          </p>
+          <div class="task-video-grid task-video-row">
+            <video controls preload="metadata" src="assets/video2/1.mp4" onerror="this.style.display='none'"></video>
+            <video controls preload="metadata" src="assets/video2/2.mp4" onerror="this.style.display='none'"></video>
+            <video controls preload="metadata" src="assets/video2/3.mp4" onerror="this.style.display='none'"></video>
+          </div>
+        </article>
 
-bash examples/RoboTwin-Mem/eval_files/eval.sh \
-  cover_blocks_hard demo_clean pure_image_keyframe_memory 0 0</code></pre>
+        <article class="task-block">
+          <h4>Task 3</h4>
+          <p class="task-instruction">
+            <strong>Task instruction:</strong> Pick up and put down the block the number of times as shown on the paper.
+          </p>
+          <div class="task-video-grid task-video-row">
+            <video controls preload="metadata" src="assets/video3/1.mp4" onerror="this.style.display='none'"></video>
+            <video controls preload="metadata" src="assets/video3/2.mp4" onerror="this.style.display='none'"></video>
+            <video controls preload="metadata" src="assets/video3/3.mp4" onerror="this.style.display='none'"></video>
           </div>
-          <div class="panel">
-            <h4>Batch Evaluation</h4>
-            <pre><code>bash examples/RoboTwin-Mem/eval_batch/run_batch_eval.sh \
-  examples/RoboTwin-Mem/eval_batch/weights_8tasks_pure_image_keyframe_memory_teacher_qwenoft.sh</code></pre>
-            <p class="small-note">Outputs include task-wise logs and a batch summary CSV.</p>
+        </article>
+
+        <article class="task-block">
+          <h4>Task 4</h4>
+          <p class="task-instruction">
+            <strong>Task instruction:</strong> Pick up and put down the bottles on the table in the order which they are pointed by the stick one by one at the beginning.
+          </p>
+          <div class="task-video-grid">
+            <video controls preload="metadata" src="assets/video4/1.mp4" onerror="this.style.display='none'"></video>
+            <video controls preload="metadata" src="assets/video4/2.mp4" onerror="this.style.display='none'"></video>
+            <video controls preload="metadata" src="assets/video4/3.mp4" onerror="this.style.display='none'"></video>
+            <video controls preload="metadata" src="assets/video4/4.mp4" onerror="this.style.display='none'"></video>
           </div>
-        </div>
+        </article>
       </div>
     </section>
 
@@ -207,8 +193,6 @@ bash examples/RoboTwin-Mem/eval_files/eval.sh \
       <p>© <span id="year"></span> EventVLA Project.</p>
       <p>
         Page style inspired by
-        <a href="https://serene-sivy.github.io/aha-wam/" target="_blank" rel="noreferrer">AHA-WAM</a>
-        and
         <a href="https://nerfies.github.io/" target="_blank" rel="noreferrer">Nerfies</a>.
       </p>
     </div>
