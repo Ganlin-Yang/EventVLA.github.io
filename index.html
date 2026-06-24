@@ -16,6 +16,7 @@
       <a class="brand" href="#top">EventVLA</a>
       <button class="menu-toggle" aria-label="Toggle menu" id="menuToggle">Menu</button>
       <nav class="site-nav" id="siteNav">
+        <a href="#authors">Authors</a>
         <a href="#abstract">Abstract</a>
         <a href="#overview">Overview</a>
         <a href="#benchmark">RoboTwin-MeM benchmark</a>
@@ -40,9 +41,39 @@
           <a class="btn btn-primary" href="https://github.com/InternRobotics/EventVLA" target="_blank" rel="noreferrer">GitHub</a>
           <a class="btn" href="https://huggingface.co/ganlinyang/EventVLA/tree/main" target="_blank" rel="noreferrer">Checkpoints</a>
           <a class="btn" href="https://huggingface.co/datasets/ganlinyang/RoboTwin-MeM" target="_blank" rel="noreferrer">Dataset</a>
-          <a class="btn btn-muted" href="#citation">Paper Coming Soon</a>
+          <a class="btn" href="https://arxiv.org/pdf/2606.20092" target="_blank" rel="noreferrer">arXiv</a>
         </div>
 
+        <section class="author-panel" id="authors">
+          <h3>Authors</h3>
+          <p class="author-list">
+            <a href="https://scholar.google.com/citations?user=321C4TQAAAAJ&hl=zh-CN&oi=ao" target="_blank" rel="noreferrer">Ganlin Yang</a><sup>1,2,*</sup>,
+            <a href="https://openreview.net/profile?id=~Zhangzheng_Tu1" target="_blank" rel="noreferrer">Zhangzheng Tu</a><sup>4,3,*</sup>,
+            <a href="https://scholar.google.com/citations?user=6bw40_kAAAAJ&hl=zh-CN&oi=ao" target="_blank" rel="noreferrer">Yuqiang Yang</a><sup>2,*</sup>,
+            <a href="https://scholar.google.com/citations?user=RiX5SJUAAAAJ&hl=zh-CN&oi=sra" target="_blank" rel="noreferrer">Sitong Mao</a><sup>5</sup>,
+            <a href="https://scholar.google.com/citations?user=L06R7MIAAAAJ&hl=zh-CN&oi=sra" target="_blank" rel="noreferrer">Junyi Dong</a><sup>5</sup>,
+            <a href="https://scholar.google.com/citations?user=pvS8MH8AAAAJ&hl=zh-CN&oi=ao" target="_blank" rel="noreferrer">Tianxing Chen</a><sup>6</sup>,
+            <a href="https://scholar.google.com/citations?user=5Mtc0ZoAAAAJ&hl=zh-CN&oi=ao" target="_blank" rel="noreferrer">Jiaqi Peng</a><sup>7,2</sup>,
+            <a href="https://openreview.net/profile?id=~Jing_Xiong7" target="_blank" rel="noreferrer">Jing Xiong</a><sup>8,2</sup>,
+            <a href="https://openreview.net/profile?id=~Jiafei_Cao1" target="_blank" rel="noreferrer">Jiafei Cao</a><sup>2</sup>,
+            <a href="https://scholar.google.com/citations?user=SH_-B_AAAAAJ&hl=zh-CN&oi=ao" target="_blank" rel="noreferrer">Jifeng Dai</a><sup>7</sup>,
+            <a href="https://scholar.google.com/citations?user=8s1JF8YAAAAJ&hl=zh-CN&oi=ao" target="_blank" rel="noreferrer">Wengang Zhou</a><sup>1</sup>,
+            <a href="https://scholar.google.com/citations?user=HK4x3fkAAAAJ&hl=zh-CN&oi=ao" target="_blank" rel="noreferrer">Yao Mu</a><sup>3,2,+</sup>,
+            <a href="https://scholar.google.com/citations?hl=zh-CN&user=JmbbZWIAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noreferrer">Tai Wang</a><sup>2,+</sup>
+          </p>
+          <p class="affiliation-list">
+            <span><sup>1</sup> University of Science and Technology of China</span>
+            <span><sup>2</sup> Shanghai AI Laboratory</span>
+            <span><sup>3</sup> Shanghai Jiao Tong University</span>
+            <span><sup>4</sup> Dalian University of Technology</span>
+            <span><sup>5</sup> Huawei Technologies Co., Ltd.</span>
+            <span><sup>6</sup> The University of Hong Kong</span>
+            <span><sup>7</sup> Tsinghua University</span>
+            <span><sup>8</sup> Peking University</span>
+          </p>
+          <p class="author-note"><sup>*</sup> Equal contribution.</p>
+          <p class="author-note"><sup>+</sup> Corresponding author.</p>
+        </section>
       </div>
     </section>
 
@@ -172,11 +203,15 @@
     <section class="section" id="citation">
       <div class="container narrow">
         <h3>Citation</h3>
-        <p>EventVLA citation will be added after paper release.</p>
-        <pre><code>@misc{eventvla2026,
-  title  = {EventVLA: Event-Driven Visual Evidence Memory for Long-Horizon Vision-Language-Action Policies},
-  note   = {Project page based on the public EventVLA repository},
-  year   = {2026}
+        <p>
+          Paper:
+          <a href="https://arxiv.org/pdf/2606.20092" target="_blank" rel="noreferrer">arXiv:2606.20092</a>
+        </p>
+        <pre><code>@article{yang2026eventvla,
+  title={EventVLA: Event-Driven Visual Evidence Memory for Long-Horizon Vision-Language-Action Policies},
+  author={Yang, Ganlin and Tu, Zhangzheng and Yang, Yuqiang and Mao, Sitong and Dong, Junyi and Chen, Tianxing and Peng, Jiaqi and Xiong, Jing and Cao, Jiafei and Dai, Jifeng and others},
+  journal={arXiv preprint arXiv:2606.20092},
+  year={2026}
 }</code></pre>
         <p>
           Built on top of:
